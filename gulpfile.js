@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 const gulp = require('gulp')
 const fs = require('fs-extra')
 const babel = require('gulp-babel')
-/* eslint-enable @typescript-eslint/no-var-requires */
 
 function removeDir (dir) {
   return function (cb) {
