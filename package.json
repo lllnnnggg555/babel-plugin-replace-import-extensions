@@ -9,7 +9,8 @@
   "scripts": {
     "build": "npm run lint && gulp",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "postpublish": "node script/postpublish.js"
   },
   "publishConfig": {
     "access": "public",
