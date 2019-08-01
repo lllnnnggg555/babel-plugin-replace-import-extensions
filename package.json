@@ -1,29 +1,31 @@
 {
-  "name": "@gem-mine/library",
+  "name": "babel-plugin-replace-import-extensions",
   "version": "1.0.0",
-  "description": "gem-mine-library",
+  "description": "A babel plugin to replace import extensions",
   "main": "lib/index.js",
-  "module": "module/index.js",
-  "modern": "modern/index.js",
   "files": [
-    "lib",
-    "module",
-    "modern"
+    "lib"
   ],
   "scripts": {
     "build": "npm run lint && gulp",
-    "lib": "gulp lib",
-    "module": "gulp module",
-    "modern": "gulp modern",
-    "umd": "rollup -c rollup.config.js",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lllnnnggg555/babel-plugin-replace-import-extensions"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "import",
+    "extensions"
+  ],
+  "peerDependencies": {
+    "@babel/core": "^7.0.0"
+  },
   "dependencies": {
-    "@babel/runtime": "^7.5.5",
-    "@sdp.nd/fish": "^3.4.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "@babel/helper-plugin-utils": "^7.0.0",
+    "@babel/runtime": "^7.5.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -33,38 +35,22 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
+    "@babel/types": "^7.5.5",
+    "@types/babel__traverse": "^7.0.7",
+    "@types/node": "^12.6.8",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
-    "babel-plugin-add-module-exports": "^1.0.2",
     "babel-plugin-import": "^1.11.2",
-    "core-js": "^3.1.4",
     "eslint": "^5.16.0",
-    "eslint-config-import": "^0.13.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-config-standard-react": "^7.0.2",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-standard": "^4.0.0",
     "fs-extra": "^8.1.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
-    "minimist": "^1.2.0",
-    "resolve": "^1.11.1",
-    "rollup": "^1.17.0",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.0.1",
-    "rollup-plugin-import-alias": "^1.0.10",
-    "rollup-plugin-less": "^1.1.2",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-svg-sprite": "^0.2.0",
-    "rollup-plugin-terser": "^5.1.1",
-    "rollup-plugin-typescript": "^1.0.1",
-    "rollup-plugin-visualizer": "^1.1.1",
-    "tslint": "^5.18.0",
     "typescript": "^3.5.3"
   }
 }

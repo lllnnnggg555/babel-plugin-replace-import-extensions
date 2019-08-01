@@ -34,9 +34,6 @@ yarn-error.log*
 .history
 
 /lib
-/module
-/modern
-/dist
 
 package-lock.json
 yarn.lock

@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 const gulp = require('gulp')
 const fs = require('fs-extra')
 const babel = require('gulp-babel')
+/* eslint-enable @typescript-eslint/no-var-requires */
 
 function removeDir (dir) {
   return function (cb) {
@@ -32,12 +34,4 @@ const buildLib = gulp.series(removeDir('lib'), copyFileTo('lib'), build('lib'))
 
 gulp.task('lib', buildLib)
 
-const buildModule = gulp.series(removeDir('module'), copyFileTo('module'), build('module'))
-
-gulp.task('module', buildModule)
-
-const buildModern = gulp.series(removeDir('modern'), copyFileTo('modern'), build('modern'))
-
-gulp.task('modern', buildModern)
-
-gulp.task('default', gulp.series(buildLib, buildModule, buildModern))
+gulp.task('default', buildLib)
