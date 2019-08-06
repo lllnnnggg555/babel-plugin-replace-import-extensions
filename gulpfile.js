@@ -20,7 +20,6 @@ function copyFileTo (dir) {
 
 function build (dir) {
   return function (cb) {
-    process.env.BABEL_ENV = dir
     gulp.src(path.resolve(__dirname, './src/**/*.?(js|jsx|ts|tsx)'))
       .pipe(babel())
       .pipe(gulp.dest(path.resolve(__dirname, `./${dir}`)))
