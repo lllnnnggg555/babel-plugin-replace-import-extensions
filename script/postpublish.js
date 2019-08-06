@@ -1,8 +1,10 @@
 const { execSync } = require('child_process')
 
-execSync('cnpm sync babel-plugin-replace-import-extensions --registry=https://registry.npm.taobao.org/ || exit 0', {
+const { name } = require('../package.json')
+
+execSync(`cnpm sync ${name} --registry=https://registry.npm.taobao.org/ || exit 0`, {
   stdio: ['inherit', 'inherit', 'inherit']
 })
-execSync('cnpm sync babel-plugin-replace-import-extensions --registry=http://registry.npm.sdp.nd/ || exit 0', {
+execSync(`cnpm sync ${name} --registry=http://registry.npm.sdp.nd/ || exit 0`, {
   stdio: ['inherit', 'inherit', 'inherit']
 })
