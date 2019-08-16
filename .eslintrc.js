@@ -7,14 +7,11 @@ module.exports = {
       'experimentalObjectRestSpread': true,
       'jsx': true
     },
-    'useJSXTextNode': true,
-    'project': 'tsconfig.json',
     'sourceType': 'module'
   },
   'plugins': ['@typescript-eslint'],
   'extends': [
     'standard',
-    'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended'
   ],
   'rules': {
@@ -32,6 +29,7 @@ module.exports = {
     }],
     '@typescript-eslint/indent': [2, 2],
     '@typescript-eslint/no-unused-vars': 2,
+    '@typescript-eslint/no-var-requires': 1,
     'standard/no-callback-literal': 0
   },
   'env': {

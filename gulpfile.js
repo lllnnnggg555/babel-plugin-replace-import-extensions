@@ -1,33 +1,36 @@
 const path = require('path')
 const gulp = require('gulp')
 const fs = require('fs-extra')
-const babel = require('gulp-babel')
+const ts = require('gulp-typescript')
 
-function removeDir (dir) {
+const output = path.resolve(__dirname, './lib')
+const tsProject = ts.createProject('tsconfig.json')
+
+function removeDir () {
   return function (cb) {
-    fs.removeSync(path.resolve(__dirname, `./${dir}`))
+    fs.removeSync(output)
     cb()
   }
 }
 
-function copyFileTo (dir) {
+function copyFileTo () {
   return function (cb) {
     gulp.src(path.resolve(__dirname, './src/**/*.!(js|jsx|ts|tsx)'))
-      .pipe(gulp.dest(path.resolve(__dirname, `./${dir}`)))
+      .pipe(gulp.dest(output))
     cb()
   }
 }
 
-function build (dir) {
+function build () {
   return function (cb) {
-    gulp.src(path.resolve(__dirname, './src/**/*.?(js|jsx|ts|tsx)'))
-      .pipe(babel())
-      .pipe(gulp.dest(path.resolve(__dirname, `./${dir}`)))
+    gulp.src(path.resolve(__dirname, './src/**/*.?(ts|tsx)'))
+      .pipe(tsProject())
+      .pipe(gulp.dest(output))
     cb()
   }
 }
 
-const buildLib = gulp.series(removeDir('lib'), copyFileTo('lib'), build('lib'))
+const buildLib = gulp.series(removeDir(), copyFileTo(), build())
 
 gulp.task('lib', buildLib)
 

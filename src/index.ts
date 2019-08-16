@@ -1,9 +1,9 @@
 import * as t from '@babel/types'
 import { types } from '@babel/core'
-import { NodePath } from '@types/babel__traverse'
 import { declare } from '@babel/helper-plugin-utils'
+import { NodePath } from 'babel__traverse'
 
-module.exports = declare((api, options: object): object => {
+export default declare((api, options: object): object => {
   api.assertVersion(7)
 
   const keys: string[] = Object.keys(options)
