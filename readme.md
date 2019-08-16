@@ -1,5 +1,11 @@
 # A babel plugin to replace import extensions
 
+## Install
+
+```bash
+npm install babel-plugin-replace-import-extensions --save-dev
+```
+
 ## How to use
 
 add blow to babelrc file
